@@ -19,7 +19,8 @@ describe("appReducer", function() {
                 },
                 pairingHistory: {
                     pairingHistoryList: []
-                }
+                },
+                flashReducer: { type: '', text: '' }
             }
 		};
 

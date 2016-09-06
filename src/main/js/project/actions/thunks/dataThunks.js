@@ -9,6 +9,7 @@ var {
 
 var { loadProjectCreator, loadPairingHistoryCreator, updatePairingHistoriesCreator } = require('project/actions/creators/dataCreators.js');
 var { setErrorTypeCreator } = require('project/actions/creators/viewCreators.js');
+var { addFlashMessage } = require('project/actions/creators/flashCreators.js');
 
 export function autoSaveThunk(action) {
     return function (dispatch, getState) {
@@ -27,6 +28,10 @@ export function autoSaveThunk(action) {
 export function savePairingThunk() {
     return function (dispatch, getState) {
         postProjectPairingAndDo(getState().data.project.id, function successCallback(newPairingHistories) {
+            dispatch(addFlashMessage({
+                type: 'success',
+                message: 'Pairing History Saved'
+            }));
             dispatch(updatePairingHistoriesCreator(newPairingHistories));
         });
     }

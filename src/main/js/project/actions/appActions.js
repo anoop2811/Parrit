@@ -1,4 +1,5 @@
 var dataCreators = require('project/actions/creators/dataCreators.js');
+var flashCreators = require('project/actions/creators/flashCreators.js');
 var viewCreators = require('project/actions/creators/viewCreators.js');
 var dataThunks = require('project/actions/thunks/dataThunks.js');
 
@@ -41,6 +42,7 @@ module.exports = {
     setNewPersonModalOpen: viewCreators.setNewPersonModalOpenCreator,
     setNewPairingBoardModalOpen: viewCreators.setNewPairingBoardModalOpenCreator,
     setPairingHistoryPanelOpen: viewCreators.setPairingHistoryPanelOpenCreator,
-    setErrorType: viewCreators.setErrorTypeCreator
+    setErrorType: viewCreators.setErrorTypeCreator,
+    addFlashMessage: flashCreators.addFlashMessage
 };
 

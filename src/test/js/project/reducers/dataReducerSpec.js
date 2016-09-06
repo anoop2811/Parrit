@@ -12,7 +12,8 @@ describe("dataReducer", function() {
             },
             pairingHistory: {
                 pairingHistoryList: []
-            }
+            },
+            flashReducer: { type: '', text: '' }
         };
 
         expect(
