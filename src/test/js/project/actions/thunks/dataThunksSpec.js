@@ -104,8 +104,8 @@ describe('dataThunks', function () {
                 pairingHistories: newPairingHistories
             };
             var addFlashMessageAction = {
-                type: action.message.type,
-                text: action.message.text
+                type: 'ADD_FLASH_MESSAGE',
+                text: 'Pairing History Saved'
             };
             beforeEach(function () {
                 getStateSpy.and.returnValue(stateOfApp);
