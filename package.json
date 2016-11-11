@@ -8,6 +8,9 @@
     "type": "git",
     "url": "https://github.com/Pinwheeler/Parrit"
   },
+  "scripts": {
+    "test": "karma start"
+  },
   "dependencies": {
     "axios": "0.12.x",
     "interact.js": "1.2.x",

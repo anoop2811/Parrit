@@ -99,7 +99,8 @@ var App = React.createClass({
         var headerProps = {
             setPairingHistoryPanelOpen: this.props.setPairingHistoryPanelOpen,
             isPairingHistoryPanelOpen: this.props.settings.isPairingHistoryPanelOpen,
-            postLogout: this.props.postLogout
+            postLogout: this.props.postLogout,
+            flash: this.props.data.flash
         };
 
         var projectProps = {

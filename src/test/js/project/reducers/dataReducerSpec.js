@@ -13,7 +13,7 @@ describe("dataReducer", function() {
             pairingHistory: {
                 pairingHistoryList: []
             },
-            flashReducer: { type: '', text: '' }
+            flash: { type: '', text: '' }
         };
 
         expect(

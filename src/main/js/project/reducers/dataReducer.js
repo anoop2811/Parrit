@@ -7,7 +7,7 @@ var flashReducer = require('project/reducers/flashReducer.js');
 var dataReducer = Redux.combineReducers({
     project: projectReducer,
     pairingHistory: pairingHistoryReducer,
-    flashReducer: flashReducer
+    flash: flashReducer
 });
 
 module.exports = dataReducer;

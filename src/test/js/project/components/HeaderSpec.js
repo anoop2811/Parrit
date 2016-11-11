@@ -6,6 +6,11 @@ var RenderComponent = require('support/RenderComponent.js');
 
 var Header = require('project/components/Header.js');
 
+var Mocker = require('support/ComponentMocker.js');
+
+var FlashMock = Mocker('Flash');
+Header.__set__('Flash', FlashMock);
+
 describe('Header', function() {
     var props;
     var header;
@@ -15,7 +20,10 @@ describe('Header', function() {
         props = {
             setPairingHistoryPanelOpen: jasmine.createSpy('setPairingHistoryPanelOpenSpy'),
             isPairingHistoryPanelOpen: false,
-            postLogout: jasmine.createSpy('postLogoutSpy')
+            postLogout: jasmine.createSpy('postLogoutSpy'),
+            flash: {
+                message: ''
+            }
         };
 
         header = RenderComponent(Header, <Header {...props}/>);
@@ -44,5 +52,10 @@ describe('Header', function() {
     it('#closePairingHistoryPanel calls setPairingHistoryPanelOpen with false', function() {
         header.closePairingHistoryPanel();
         expect(props.setPairingHistoryPanelOpen).toHaveBeenCalledWith(false);
+    });
+
+    it('has Flash message component', function () {
+        var flashComponent = ReactTestUtils.findRenderedComponentWithType(header, FlashMock);
+        expect(flashComponent.props.message).toEqual('');
     });
 });

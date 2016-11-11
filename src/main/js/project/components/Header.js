@@ -1,15 +1,18 @@
 var React = require('react');
+var Flash = require('./Flash.js');
 
 var Header = React.createClass({
     propTypes: {
         setPairingHistoryPanelOpen: React.PropTypes.func.isRequired,
         isPairingHistoryPanelOpen: React.PropTypes.bool.isRequired,
-        postLogout: React.PropTypes.func.isRequired
+        postLogout: React.PropTypes.func.isRequired,
+        flash: React.PropTypes.object.isRequired
     },
 
     render: function() {
         var classes = 'history' + (this.props.isPairingHistoryPanelOpen ? ' open' : '');
         return <header>
+            <Flash {...this.props.flash} />
             <a href="/" className="header-logo"/>
             <div className="links">
                 <h3 className="logout" onClick={this.props.postLogout}>LOGOUT</h3>
